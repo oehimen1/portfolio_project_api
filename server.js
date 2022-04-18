@@ -14,7 +14,7 @@ app.use(morgan("tiny"))
 app.use(security.extractUserFromJwt)
 
 app.use("/auth", authRoutes)
-app.use("/portfolio", projectRoutes)
+app.use("/", projectRoutes)
 
 app.use((req, res, next) => {
   return next(new NotFoundError())
